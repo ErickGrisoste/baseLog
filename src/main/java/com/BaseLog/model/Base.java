@@ -46,4 +46,8 @@ public class Base {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    public void addFuncionario(Funcionario funcionario){
+        funcionarios.add(funcionario);
+    }
 }

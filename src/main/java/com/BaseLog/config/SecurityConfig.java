@@ -21,10 +21,15 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf
                         .ignoringRequestMatchers(
                                 new AntPathRequestMatcher("/funcionario/cadastrar"),
-                                new AntPathRequestMatcher("/base/cadastrar"))
+                                new AntPathRequestMatcher("/base/cadastrar"),
+                                new AntPathRequestMatcher("/base/listar"),
+                                new AntPathRequestMatcher("/base/{baseId}"))
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/funcionario/cadastrar", "/base/cadastrar").permitAll()
+                        .requestMatchers("/funcionario/cadastrar",
+                                "/base/cadastrar",
+                                "/base/listar",
+                                "/base/{baseId}").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();

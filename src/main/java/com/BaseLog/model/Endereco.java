@@ -1,14 +1,28 @@
 package com.BaseLog.model;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Embeddable
 public class Endereco{
+    @NotBlank
     private String logradouro;
+
+    @Min(1)
     private int numero;
+
+    @Size(min = 8)
     private String cep;
+
+    @NotBlank
     private String cidade;
+
+    @NotBlank
     private String bairro;
+
+    @NotBlank
     private String estado;
 
     public String getLogradouro() {
