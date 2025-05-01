@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Base</title>
+  <link rel="stylesheet" href="../css/cadastroBase.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Cadastrar Nova Base</h2>
+
+<form id="baseForm">
+  <label>Logradouro:</label>
+  <input type="text" name="logradouro" required>
+
+  <label>Número:</label>
+  <input type="number" name="numero" required>
+
+  <label>CEP:</label>
+  <input type="text" name="cep" required>
+
+  <label>Cidade:</label>
+  <input type="text" name="cidade" required>
+
+  <label>Bairro:</label>
+  <input type="text" name="bairro" required>
+
+  <label>Estado:</label>
+  <input type="text" name="estado" required>
+
+  <label>Complemento:</label>
+  <input type="text" name="complemento">
+
+  <label>Status:</label>
+  <select name="status" required>
+    <option value="OPERANTE">Operante</option>
+    <option value="FECHADA">Fechada</option>
+    <option value="ALMOCO">Almoço</option>
+    <option value="FERIADO">Feriado</option>
+  </select>
+
+  <button type="submit">Cadastrar</button>
+</form>
+
+
+<script src="../js/base.js"></script>
+</body>
+</html>
