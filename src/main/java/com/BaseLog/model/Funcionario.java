@@ -1,5 +1,6 @@
 package com.BaseLog.model;
 
+import com.BaseLog.dto.FuncionarioDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -31,6 +32,16 @@ public class Funcionario {
     @NotNull
     @ManyToOne
     private Base base;
+
+    public Funcionario(){}
+
+    public Funcionario(FuncionarioDTO funcionario) {
+        this.nome = funcionario.nome();
+        this.email = funcionario.email();
+        this.base = funcionario.base();
+        this.cargo = funcionario.cargo();
+        this.senha = funcionario.senha();
+    }
 
     public Long getId() {
         return id;

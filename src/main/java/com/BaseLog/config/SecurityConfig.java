@@ -23,13 +23,15 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/funcionario/cadastrar"),
                                 new AntPathRequestMatcher("/base/cadastrar"),
                                 new AntPathRequestMatcher("/base/listar"),
-                                new AntPathRequestMatcher("/base/{baseId}"))
+                                new AntPathRequestMatcher("/base/{baseId}"),
+                                new AntPathRequestMatcher("/funcionario/login"))
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/funcionario/cadastrar",
                                 "/base/cadastrar",
                                 "/base/listar",
-                                "/base/{baseId}").permitAll()
+                                "/base/{baseId}",
+                                "/funcionario/login").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();
