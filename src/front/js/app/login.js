@@ -19,7 +19,7 @@ const form = document.getElementById("loginForm");
       .then(response => {
         if (response.ok) {
           alert("Login realizado com sucesso!");
-          window.location.href = "../html/index.html";
+          window.location.href = "../html/home.html";
         } else {
           alert("Credenciais inválidas.");
         }
