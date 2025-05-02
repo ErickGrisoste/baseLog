@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #212529;
+  color: white;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoRelogio img{
+    width: 4em;
+    height: auto;
+}
+
+.ponto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 8em;
+    flex-direction: column;
+}
+
+.ponto button{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #799fbf;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ponto button:hover{
+    background-color: #3883c2;
+}
+
+.hora {
+  font-size: 2em;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.data{
+    color: black;
+    margin-bottom: 20px;
+}
