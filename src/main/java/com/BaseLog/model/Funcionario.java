@@ -33,6 +33,19 @@ public class Funcionario {
     @ManyToOne
     private Base base;
 
+    @Enumerated(EnumType.STRING)
+    private StatusFuncionario statusFuncionario = StatusFuncionario.OFF;
+
+    public StatusFuncionario getStatusFuncionario() {
+        return statusFuncionario;
+    }
+
+    public void setStatusFuncionario(StatusFuncionario statusFuncionario) {
+        this.statusFuncionario = statusFuncionario;
+    }
+
+
+
     public Funcionario(){}
 
     public Funcionario(FuncionarioDTO funcionario) {

@@ -16,6 +16,7 @@ public class BaseService {
     private BaseRepository baseRepository;
 
     public List<BaseDTO> listarBases(){
+        baseRepository.findAll().forEach(base -> base.atualizarStatus(base.getFuncionarios()));
         return baseRepository.findAll().stream().map(b ->
                 new BaseDTO(b.getId(), b.getEndereco(), b.getFuncionarios(), b.getStatus())).
                 collect(Collectors.toList());
@@ -28,9 +29,9 @@ public class BaseService {
     public BaseDTO buscarBase(Long baseId) {
         Optional<Base> base = baseRepository.findById(baseId);
         if (base.isPresent()){
-            Optional<BaseDTO> baseDTO = base.map(b ->
-                    new BaseDTO(b.getId(), b.getEndereco(), b.getFuncionarios(), b.getStatus()));
-            return baseDTO.get();
+            return base.map(b ->
+                    new BaseDTO(b.getId(), b.getEndereco(), b.getFuncionarios(), b.getStatus()))
+                    .orElseThrow();
         }
         throw new RuntimeException("Base não encontrada.");
     }

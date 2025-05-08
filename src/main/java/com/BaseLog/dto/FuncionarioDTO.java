@@ -1,6 +1,7 @@
 package com.BaseLog.dto;
 
 import com.BaseLog.model.Base;
+import com.BaseLog.model.StatusFuncionario;
 
 public record FuncionarioDTO(
         String nome,
@@ -8,6 +9,7 @@ public record FuncionarioDTO(
         Base base,
         String email,
         String senha,
-        String cargo
+        String cargo,
+        StatusFuncionario status
 ) {
 }

@@ -24,14 +24,18 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/base/cadastrar"),
                                 new AntPathRequestMatcher("/base/listar"),
                                 new AntPathRequestMatcher("/base/{baseId}"),
-                                new AntPathRequestMatcher("/funcionario/login"))
+                                new AntPathRequestMatcher("/funcionario/login"),
+                                new AntPathRequestMatcher("/funcionario/buscar/{id}"),
+                                new AntPathRequestMatcher("/funcionario/bater-ponto/{id}"))
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/funcionario/cadastrar",
                                 "/base/cadastrar",
                                 "/base/listar",
                                 "/base/{baseId}",
-                                "/funcionario/login").permitAll()
+                                "/funcionario/login",
+                                "/funcionario/buscar/{id}",
+                                "/funcionario/bater-ponto/{id}").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();

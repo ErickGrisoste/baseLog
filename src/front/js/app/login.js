@@ -17,15 +17,12 @@ const form = document.getElementById("loginForm");
         body: JSON.stringify(loginData)
       })
       .then(response => {
-        if (response.ok) {
-          alert("Login realizado com sucesso!");
-          window.location.href = "../html/home.html";
-        } else {
-          alert("Credenciais inválidas.");
-        }
-      })
-      .catch(error => {
-        console.error("Erro:", error);
-        alert("Erro de conexão com a API.");
+          if (!response.ok) throw new Error("Login inválido");
+          return response.json();
+        })
+        .then(data => {
+          localStorage.setItem("funcionarioId", data.id); // <-- salvando ID
+          window.location.href = "../html/home.html"; // redireciona para tela de ponto
+        })
+        .catch(error => alert("Erro no login: " + error.message));
       });
-    });

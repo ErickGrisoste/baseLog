@@ -4,5 +4,5 @@ public enum Status {
     OPERANTE,
     FECHADA,
     ALMOCO,
-    FERIADO;
+    FERIADO
 }

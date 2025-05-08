@@ -13,6 +13,7 @@ public class Base {
     private Endereco endereco;
     @OneToMany(mappedBy = "base")
     private List<Funcionario> funcionarios;
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public Long getId() {
@@ -50,4 +51,15 @@ public class Base {
     public void addFuncionario(Funcionario funcionario){
         funcionarios.add(funcionario);
     }
+
+    public void atualizarStatus(List<Funcionario> funcionarios){
+        setStatus(Status.FECHADA);
+        for(Funcionario f : funcionarios){
+            if (f.getStatusFuncionario().equals(StatusFuncionario.ON)){
+                setStatus(Status.OPERANTE);
+                break;
+            }
+        }
+    }
+
 }
